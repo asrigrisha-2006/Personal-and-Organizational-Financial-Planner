@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinPlan – Reports</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand-nav">₹ FinPlan</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="input.html">Add Data</a>
+      <a href="reports.html" class="active">Reports</a>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="page-header">
+      <h2>Financial Reports</h2>
+      <p class="muted">Full breakdown of your finances</p>
+    </div>
+
+    <!-- Investment Allocation Chart -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <h4>Investment Allocation</h4>
+        <canvas id="invChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Savings Over Time</h4>
+        <canvas id="savingsLine"></canvas>
+      </div>
+    </div>
+
+    <!-- Records Tables -->
+    <div class="section-title">Income Records</div>
+    <div class="table-wrap">
+      <table class="data-table" id="income-table">
+        <thead><tr><th>Source</th><th>Amount</th><th>Month</th><th>Year</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="section-title">Expense Records</div>
+    <div class="table-wrap">
+      <table class="data-table" id="expense-table">
+        <thead><tr><th>Category</th><th>Amount</th><th>Month</th><th>Year</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="section-title">Financial Goals</div>
+    <div id="goals-report"></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>

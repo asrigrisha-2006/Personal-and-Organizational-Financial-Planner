@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinPlan – Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand-nav">₹ FinPlan</div>
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="input.html">Add Data</a>
+      <a href="reports.html">Reports</a>
+      <button class="btn-logout" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <div class="page-container">
+    <div class="page-header">
+      <h2>Welcome back, <span id="user-name">—</span></h2>
+      <p class="muted" id="current-month"></p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="cards-grid">
+      <div class="stat-card income-card">
+        <div class="stat-icon">↑</div>
+        <div>
+          <p class="stat-label">Total Income</p>
+          <h3 class="stat-value" id="total-income">₹0</h3>
+        </div>
+      </div>
+      <div class="stat-card expense-card">
+        <div class="stat-icon">↓</div>
+        <div>
+          <p class="stat-label">Total Expenses</p>
+          <h3 class="stat-value" id="total-expense">₹0</h3>
+        </div>
+      </div>
+      <div class="stat-card savings-card">
+        <div class="stat-icon">◈</div>
+        <div>
+          <p class="stat-label">Net Savings</p>
+          <h3 class="stat-value" id="net-savings">₹0</h3>
+        </div>
+      </div>
+      <div class="stat-card rate-card">
+        <div class="stat-icon">%</div>
+        <div>
+          <p class="stat-label">Savings Rate</p>
+          <h3 class="stat-value" id="savings-rate">0%</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <h4>Income vs Expenses</h4>
+        <canvas id="donutChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Monthly Trend</h4>
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h4>Expense Breakdown</h4>
+        <canvas id="expensePie"></canvas>
+      </div>
+    </div>
+
+    <!-- Investment Suggestion -->
+    <div class="suggestion-card" id="suggestion-box">
+      <div class="suggestion-header">
+        <span class="suggestion-icon">💡</span>
+        <h4>Investment Suggestion</h4>
+      </div>
+      <div id="suggestion-text" class="suggestion-body">Loading your plan...</div>
+    </div>
+
+    <!-- Goals Progress -->
+    <div class="section-title">Financial Goals</div>
+    <div id="goals-container" class="goals-grid"></div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
