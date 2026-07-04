@@ -79,7 +79,29 @@ node server.js
 ```
 
 ---
+## 📸 Application Screenshots
 
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+---
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+---
+
+### Expense Entry
+
+![Expense Entry](screenshots/input.png)
+
+---
+
+### Reports
+
+![Reports](screenshots/reports.png)
 ##  Future Improvements
 
 - AI-powered financial forecasting
